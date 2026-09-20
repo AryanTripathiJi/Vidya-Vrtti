@@ -129,5 +129,5 @@ npm run dev
 
 ---
 <div align="center">
-  <i>Built with ❤️ for the Smart India Hackathon 2026</i>
+  <i>NULL EXPLOITERS SMART INDIA HACKATHON 2026</i>
 </div>

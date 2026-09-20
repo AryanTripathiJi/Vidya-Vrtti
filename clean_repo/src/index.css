@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Lora', serif;
+  --font-serif: 'Playfair Display', serif;
+}
+
+@layer base {
+  :root {
+    --mota-navy: #71816d;
+    --mota-navy-light: #8a9c85;
+    --mota-navy-dark: #5a6857;
+    --mota-orange: #c9b79c;
+    --mota-orange-hover: #bda88a;
+    --mota-green: #71816d;
+    --mota-red: #c62828;
+    --mota-teal: #00838f;
+    --mota-purple: #6a1b9a;
+    --mota-yellow: #f57f17;
+    --mota-bg: #f1e0c5;
+    --mota-card: #fdfbf7;
+    --mota-border: #c9b79c;
+    --mota-text: #2c352a;
+    --mota-muted: #5a6857;
+  }
+}
+
+/* Override modern rounded corners and shadows for a minimal vintage feel */
+.rounded-xl, .rounded-2xl, .rounded-lg, .rounded-md {
+  border-radius: 4px !important;
+}
+.shadow-xl, .shadow-2xl, .shadow-md, .shadow-sm {
+  box-shadow: 4px 4px 0px rgba(201, 183, 156, 0.4) !important;
+  border: 1px solid var(--mota-border) !important;
+}
+
+body {
+  margin: 0;
+  font-family: 'Lora', serif;
+  background-color: var(--mota-bg);
+  color: var(--mota-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Document print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}

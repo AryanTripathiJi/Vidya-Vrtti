@@ -107,77 +107,8 @@ export const Navbar: React.FC = () => {
           </Link>
         </div>
 
-        {/* Center: Live Role Switcher (Crucial for Demo) */}
-        <div className="relative">
-          <button
-            onClick={() => setShowRoleDropdown(!showRoleDropdown)}
-            className={`flex items-center space-x-2 px-3 py-1.5 rounded-lg border text-xs font-semibold shadow-xs transition-all ${getRoleBadgeColor(
-              role
-            )} hover:brightness-110`}
-            title="Click to switch role view"
-          >
-            <ShieldCheck className="w-4 h-4 text-amber-300" />
-            <span className="hidden sm:inline text-slate-300 font-normal">Active Role:</span>
-            <span className="font-bold">{getRoleLabel(role)}</span>
-            <ChevronDown className="w-3.5 h-3.5 text-slate-300" />
-          </button>
-
-          {showRoleDropdown && (
-            <div className="absolute right-0 sm:left-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-[#c9b79c] py-2 text-slate-800 z-50">
-              <div className="px-3 py-1.5 border-b border-[#dfcdb1] text-[11px] font-bold text-slate-400 uppercase tracking-wider">
-                Switch Portal Role (Demo Mode)
-              </div>
-              <button
-                onClick={() => handleRoleSwitch('applicant')}
-                className={`w-full text-left px-3.5 py-2.5 flex items-center space-x-3 text-xs font-medium hover:bg-[#f1e0c5] transition-colors ${
-                  role === 'applicant' ? 'bg-amber-50 text-amber-900 font-semibold' : ''
-                }`}
-              >
-                <GraduationCap className="w-4 h-4 text-amber-600" />
-                <div>
-                  <div className="font-bold text-slate-900">ST Student Applicant</div>
-                  <div className="text-[10px] text-slate-500">Apply, track & respond to queries</div>
-                </div>
-              </button>
-              <button
-                onClick={() => handleRoleSwitch('officer')}
-                className={`w-full text-left px-3.5 py-2.5 flex items-center space-x-3 text-xs font-medium hover:bg-[#f1e0c5] transition-colors ${
-                  role === 'officer' ? 'bg-teal-50 text-teal-900 font-semibold' : ''
-                }`}
-              >
-                <FileCheck2 className="w-4 h-4 text-teal-600" />
-                <div>
-                  <div className="font-bold text-slate-900">Verification Officer</div>
-                  <div className="text-[10px] text-slate-500">Document scrutiny & OCR verification</div>
-                </div>
-              </button>
-              <button
-                onClick={() => handleRoleSwitch('committee')}
-                className={`w-full text-left px-3.5 py-2.5 flex items-center space-x-3 text-xs font-medium hover:bg-[#f1e0c5] transition-colors ${
-                  role === 'committee' ? 'bg-purple-50 text-purple-900 font-semibold' : ''
-                }`}
-              >
-                <Sparkles className="w-4 h-4 text-purple-600" />
-                <div>
-                  <div className="font-bold text-slate-900">Selection Committee Member</div>
-                  <div className="text-[10px] text-slate-500">Merit list engine & candidate ranking</div>
-                </div>
-              </button>
-              <button
-                onClick={() => handleRoleSwitch('admin')}
-                className={`w-full text-left px-3.5 py-2.5 flex items-center space-x-3 text-xs font-medium hover:bg-[#f1e0c5] transition-colors ${
-                  role === 'admin' ? 'bg-rose-50 text-rose-900 font-semibold' : ''
-                }`}
-              >
-                <Building2 className="w-4 h-4 text-rose-600" />
-                <div>
-                  <div className="font-bold text-slate-900">MoTA Administrator</div>
-                  <div className="text-[10px] text-slate-500">Executive dashboard & scheme config</div>
-                </div>
-              </button>
-            </div>
-          )}
-        </div>
+        {/* Center removed */}
+        <div className="hidden lg:flex flex-1"></div>
 
         {/* Right: Notifications & Profile */}
         <div className="flex items-center space-x-3">

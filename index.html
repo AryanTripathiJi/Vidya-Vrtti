@@ -9,15 +9,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <style>
-      /* Hide the Google Translate UI */
-      .goog-te-banner-frame.skiptranslate {
+      /* Hide the Google Translate UI and prevent body shift */
+      .goog-te-banner-frame.skiptranslate, 
+      .goog-te-banner-frame, 
+      #goog-gt-tt, 
+      .goog-te-balloon-frame {
         display: none !important;
       }
       body {
-        top: 0px !important;
+        top: 0 !important;
+        position: static !important;
       }
       #google_translate_element {
         display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+        width: 0 !important;
+        overflow: hidden !important;
       }
     </style>
   </head>

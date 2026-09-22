@@ -1,9 +1,9 @@
-<div align="center">
-  <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1200&h=400" alt="ST-SETU Banner" width="100%" />
+﻿<div align="center">
+  <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1200&h=400" alt="Vidya-Vrtti Banner" width="100%" />
   
   <br />
   
-  <h1>🎓 ST-SETU</h1>
+  <h1>ðŸŽ“ Vidya-Vrtti</h1>
   <h3>Scholarship & Fellowship Tribal Education Unified Platform</h3>
 
   <p align="center">
@@ -11,10 +11,10 @@
   </p>
 
   <p align="center">
-    <a href="#-key-features">Key Features</a> •
-    <a href="#-platform-gallery">Gallery</a> •
-    <a href="#-tech-stack">Tech Stack</a> •
-    <a href="#-quick-start">Quick Start</a> •
+    <a href="#-key-features">Key Features</a> â€¢
+    <a href="#-platform-gallery">Gallery</a> â€¢
+    <a href="#-tech-stack">Tech Stack</a> â€¢
+    <a href="#-quick-start">Quick Start</a> â€¢
     <a href="#-architecture">Architecture</a>
   </p>
   
@@ -28,15 +28,15 @@
 
 ---
 
-## 🎯 About The Project
+## ðŸŽ¯ About The Project
 
 The **Ministry of Tribal Affairs (MoTA)** administers flagship scholarship schemes like the *National Fellowship for Scheduled Tribes (NFST)* and the *National Overseas Scholarship (NOS)*. 
 
-**ST-SETU** revolutionizes this process by providing an **end-to-end digital ecosystem** that connects ST students directly with these opportunities, replacing manual scrutiny with AI-assisted verification, and ensuring real-time DBT (Direct Benefit Transfer) tracking.
+**Vidya-Vrtti** revolutionizes this process by providing an **end-to-end digital ecosystem** that connects ST students directly with these opportunities, replacing manual scrutiny with AI-assisted verification, and ensuring real-time DBT (Direct Benefit Transfer) tracking.
 
 ---
 
-## 📸 Platform Gallery
+## ðŸ“¸ Platform Gallery
 
 <table align="center">
   <tr>
@@ -69,10 +69,10 @@ The **Ministry of Tribal Affairs (MoTA)** administers flagship scholarship schem
 
 ---
 
-## ✨ Key Features
+## âœ¨ Key Features
 
 <details>
-<summary><b>1️⃣ Unified Applicant Portal</b></summary>
+<summary><b>1ï¸âƒ£ Unified Applicant Portal</b></summary>
 <br/>
 <ul>
   <li><b>Smart Scheme Browsing:</b> View eligibility criteria, required documents, and deadlines in a structured format.</li>
@@ -83,7 +83,7 @@ The **Ministry of Tribal Affairs (MoTA)** administers flagship scholarship schem
 </details>
 
 <details>
-<summary><b>2️⃣ Intelligent Admin & Officer Hub</b></summary>
+<summary><b>2ï¸âƒ£ Intelligent Admin & Officer Hub</b></summary>
 <br/>
 <ul>
   <li><b>Real-Time Dashboards:</b> KPIs covering total applications, verification statuses, and demographic breakdowns.</li>
@@ -95,7 +95,7 @@ The **Ministry of Tribal Affairs (MoTA)** administers flagship scholarship schem
 
 ---
 
-## 🛠 Tech Stack
+## ðŸ›  Tech Stack
 
 | Category | Technology | Purpose |
 | :--- | :--- | :--- |
@@ -107,16 +107,16 @@ The **Ministry of Tribal Affairs (MoTA)** administers flagship scholarship schem
 
 ---
 
-## ⚙️ Quick Start
+## âš™ï¸ Quick Start
 
-To run ST-SETU locally, follow these simple steps:
+To run Vidya-Vrtti locally, follow these simple steps:
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/AryanTripathiJi/st-setu.git
+git clone https://github.com/AryanTripathiJi/Vidya-Vrtti.git
 
 # 2. Navigate into the directory
-cd st-setu
+cd Vidya-Vrtti
 
 # 3. Install dependencies
 npm install
@@ -129,5 +129,5 @@ npm run dev
 
 ---
 <div align="center">
-  <i>NULL EXPLOITERS SMART INDIA HACKATHON 2026</i>
+  <i>Built with â¤ï¸ for the Smart India Hackathon 2026</i>
 </div>

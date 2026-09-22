@@ -42,18 +42,18 @@ export const GlobalFiltersAndActions = () => {
       </div>
 
       <div className="flex items-center gap-2">
-        <button className="flex items-center px-3 py-2 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-bold rounded-lg transition-colors">
+        <Link to="/admin/schemes/configure" className="flex items-center px-3 py-2 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-bold rounded-lg transition-colors">
           <Plus className="w-4 h-4 mr-1" /> New Scheme
-        </button>
-        <button className="flex items-center px-3 py-2 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-bold rounded-lg transition-colors">
+        </Link>
+        <Link to="/admin/reports" className="flex items-center px-3 py-2 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-bold rounded-lg transition-colors">
           <Download className="w-4 h-4 mr-1" /> Export Data
-        </button>
-        <button className="flex items-center px-3 py-2 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-bold rounded-lg transition-colors">
+        </Link>
+        <Link to="/admin/communications" className="flex items-center px-3 py-2 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-bold rounded-lg transition-colors">
           <Mail className="w-4 h-4 mr-1" /> Bulk Comm
-        </button>
-        <button className="flex items-center px-3 py-2 bg-slate-800 hover:bg-slate-900 text-white text-xs font-bold rounded-lg transition-colors shadow-xs">
+        </Link>
+        <Link to="/admin/audit" className="flex items-center px-3 py-2 bg-slate-800 hover:bg-slate-900 text-white text-xs font-bold rounded-lg transition-colors shadow-xs">
           <Activity className="w-4 h-4 mr-1" /> Audit Log
-        </button>
+        </Link>
       </div>
     </div>
   );

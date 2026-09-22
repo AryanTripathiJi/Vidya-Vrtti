@@ -6,7 +6,7 @@ export const CommunicationsPage: React.FC = () => {
   const [template, setTemplate] = useState('deficiency_notice');
   const [subject, setSubject] = useState('Urgent: MoTA Scholarship Document Deficiency Notification');
   const [body, setBody] = useState(
-    'Dear Applicant, Verification Officer raised queries regarding your uploaded document. Please log into ST-SETU portal and upload corrected documents.'
+    'Dear Applicant, Verification Officer raised queries regarding your uploaded document. Please log into Vidya-Vrtti portal and upload corrected documents.'
   );
 
   const handleSendBroadcast = () => {

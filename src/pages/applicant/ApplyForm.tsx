@@ -200,7 +200,7 @@ export const ApplyFormPage: React.FC = () => {
     doc.setFontSize(16);
     doc.text('MINISTRY OF TRIBAL AFFAIRS (MoTA)', 105, 20, { align: 'center' });
     doc.setFontSize(12);
-    doc.text('ST-SETU Application Submission Acknowledgment', 105, 28, { align: 'center' });
+    doc.text('Vidya-Vrtti Application Submission Acknowledgment', 105, 28, { align: 'center' });
 
     doc.setLineWidth(0.5);
     doc.line(20, 32, 190, 32);
@@ -223,7 +223,7 @@ export const ApplyFormPage: React.FC = () => {
     });
 
     doc.text('This is a computer-generated acknowledgment issued under DBT Portal.', 105, 170, { align: 'center' });
-    doc.save(`ST-SETU_Acknowledgment_${submittedAppId.replace(/\//g, '_')}.pdf`);
+    doc.save(`Vidya-Vrtti_Acknowledgment_${submittedAppId.replace(/\//g, '_')}.pdf`);
   };
 
   // If already submitted success view:
@@ -740,7 +740,7 @@ export const ApplyFormPage: React.FC = () => {
         )}
 
         {/* Buttons Navigation Bar */}
-        <div className="mt-8 pt-4 border-t border-[#dfcdb1] flex items-center justify-between">
+        <div className="mt-8 pt-4 border-t border-[#c9b79c] flex items-center justify-between">
           <button
             type="button"
             onClick={handlePrev}

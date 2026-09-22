@@ -88,6 +88,7 @@ export const INITIAL_SCHEMES: Scheme[] = [
 export const INITIAL_USERS: User[] = [
   {
     id: 'usr-student-1',
+    loginId: 'ST-A1B2C3',
     name: 'Priya Naik',
     email: 'student@demo.in',
     phone: '9876543210',
@@ -99,6 +100,7 @@ export const INITIAL_USERS: User[] = [
   },
   {
     id: 'usr-officer-1',
+    loginId: 'ST-OFF-999',
     name: 'Shri Rajesh Kumar',
     email: 'officer@demo.in',
     phone: '9876500001',
@@ -107,6 +109,7 @@ export const INITIAL_USERS: User[] = [
   },
   {
     id: 'usr-scrutiny-1',
+    loginId: 'ST-SCR-888',
     name: 'Smt. Ananya Das',
     email: 'scrutiny@demo.in',
     phone: '9876500002',
@@ -115,6 +118,7 @@ export const INITIAL_USERS: User[] = [
   },
   {
     id: 'usr-committee-1',
+    loginId: 'ST-COM-777',
     name: 'Dr. Meera Sharma',
     email: 'committee@demo.in',
     phone: '9876500003',
@@ -123,6 +127,7 @@ export const INITIAL_USERS: User[] = [
   },
   {
     id: 'usr-admin-1',
+    loginId: 'ST-ADM-111',
     name: 'Smt. Kavita Rao',
     email: 'admin@demo.in',
     phone: '9876500004',
@@ -135,6 +140,7 @@ export const INITIAL_APPLICATIONS: Application[] = [
   {
     id: 'NFST/2026/00142',
     applicantId: 'usr-student-1',
+    applicantLoginId: 'ST-A1B2C3',
     applicantName: 'Priya Naik',
     schemeId: 'scheme-nfst',
     schemeCode: 'NFST',
@@ -536,7 +542,7 @@ for (let i = 6; i <= 50; i++) {
       motherName: `Mother of Candidate ${i}`,
       aadhaarMasked: `XXXX-XXXX-${1000 + i}`,
       phone: `980000${1000 + i}`,
-      email: `candidate${i}@st-setu.gov.in`,
+      email: `candidate${i}@vidya-vrtti.gov.in`,
       physicallyHandicapped: 'No',
       annualIncome: 150000 + (i * 8000)
     },
@@ -687,5 +693,64 @@ export const INITIAL_ADMIN_STATS: AdminStats = {
       reason: 'Duplicate Aadhaar registration flag across two state portals',
       severity: 'High'
     }
+  ],
+  disbursements: {
+    total: '14.8 Cr',
+    monthlyTrend: [
+      { month: 'Apr', amount: 0.5 },
+      { month: 'May', amount: 1.2 },
+      { month: 'Jun', amount: 2.4 },
+      { month: 'Jul', amount: 4.8 },
+      { month: 'Aug', amount: 3.2 },
+      { month: 'Sep', amount: 2.7 }
+    ],
+    schemeSplit: [
+      { scheme: 'NFST', amount: '8.4 Cr' },
+      { scheme: 'NOS', amount: '4.2 Cr' },
+      { scheme: 'TCES', amount: '2.2 Cr' }
+    ],
+    pending: 45
+  },
+  topPerformers: {
+    states: [
+      { name: 'Odisha', count: 420 },
+      { name: 'Jharkhand', count: 380 },
+      { name: 'Chhattisgarh', count: 310 },
+      { name: 'Madhya Pradesh', count: 280 },
+      { name: 'Maharashtra', count: 210 }
+    ],
+    institutes: [
+      { name: 'IIT Kharagpur', count: 45 },
+      { name: 'Utkal University', count: 38 },
+      { name: 'NIT Rourkela', count: 32 },
+      { name: 'Ranchi University', count: 28 },
+      { name: 'Delhi University', count: 25 }
+    ],
+    officers: [
+      { name: 'Shri Rajesh Kumar', count: 145 },
+      { name: 'Smt. Ananya Das', count: 132 },
+      { name: 'Dr. Vivek Sharma', count: 118 },
+      { name: 'Smt. Priya Singh', count: 98 },
+      { name: 'Shri Amit Patel', count: 85 }
+    ],
+    bottomOfficers: [
+      { name: 'Officer A', reason: 'Avg 12 days/app' },
+      { name: 'Officer B', reason: '24% error rate' },
+      { name: 'Officer C', reason: 'High backlog (80+)' },
+      { name: 'Officer D', reason: 'Low login activity' },
+      { name: 'Officer E', reason: 'Slow response SLA' }
+    ]
+  },
+  activityFeed: [
+    { id: 'act-1', message: 'Officer Shri Rajesh Kumar approved application NFST/2026/00142', timestamp: '10 mins ago', type: 'approval' },
+    { id: 'act-2', message: 'Deficiency raised on NOS/2026/00456 by Smt. Ananya Das', timestamp: '25 mins ago', type: 'deficiency' },
+    { id: 'act-3', message: 'New application submitted by Priya Naik for NFST', timestamp: '1 hour ago', type: 'submission' },
+    { id: 'act-4', message: 'Merit list generated for TCE Scheme (250 candidates)', timestamp: '3 hours ago', type: 'merit' },
+    { id: 'act-5', message: '₹4.5 Lakhs disbursed to 12 applicants under NOS', timestamp: '5 hours ago', type: 'disbursement' }
+  ],
+  schemePerformance: [
+    { scheme: 'NFST', applications: 4200, pending: 320, verified: 3100, selected: 750, disbursedAmount: '2.8 Cr', avgProcessingTimeDays: 18 },
+    { scheme: 'NOS', applications: 480, pending: 45, verified: 380, selected: 20, disbursedAmount: '1.2 Cr', avgProcessingTimeDays: 32 },
+    { scheme: 'TCES', applications: 1850, pending: 120, verified: 1500, selected: 400, disbursedAmount: '0.9 Cr', avgProcessingTimeDays: 12 }
   ]
 };

@@ -9,7 +9,7 @@ interface AuthContextType {
   notifications: Notification[];
   unreadCount: number;
   login: (email: string, role?: Role) => Promise<void>;
-  register: (data: Partial<User>) => Promise<void>;
+  register: (data: Partial<User>) => Promise<User>;
   logout: () => void;
   switchRole: (newRole: Role) => void;
   refreshNotifications: () => Promise<void>;
@@ -48,8 +48,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const register = async (data: Partial<User>) => {
     const newUser = await mockApi.register(data);
     setUser(newUser);
-    setRole('applicant');
+    setRole(newUser.role);
     setToken(`jwt-token-${newUser.id}`);
+    return newUser;
   };
 
   const logout = () => {

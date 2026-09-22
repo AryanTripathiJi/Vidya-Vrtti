@@ -26,18 +26,20 @@ interface NavItem {
 }
 
 export const Sidebar: React.FC = () => {
-  const { role } = useAuth();
+  const { user, role } = useAuth();
   const isApplicant = role === 'applicant';
 
   const applicantLinks: NavItem[] = [
-    { to: '/app', label: 'Dashboard', icon: LayoutDashboard, exact: true },
+    ...(user ? [{ to: '/app', label: 'Dashboard', icon: LayoutDashboard, exact: true }] : []),
     { to: '/app/schemes', label: 'Browse Schemes', icon: BookOpen },
-    { to: '/app/applications', label: 'My Applications', icon: FileText },
-    { to: '/app/profile', label: 'My Profile', icon: User },
+    ...(user ? [
+      { to: '/app/applications', label: 'My Applications', icon: FileText },
+      { to: '/app/profile', label: 'My Profile', icon: User }
+    ] : []),
     { to: '/help', label: 'Help & FAQs', icon: HelpCircle }
   ];
 
-  const adminLinks: NavItem[] = [
+  const motaAdminLinks: NavItem[] = [
     { to: '/admin', label: 'Executive Dashboard', icon: LayoutDashboard, exact: true },
     { to: '/admin/applications', label: 'All Applications', icon: FileText },
     { to: '/admin/verification', label: 'Verification Queue', icon: UserCheck, badge: 'AI-OCR' },
@@ -49,6 +51,13 @@ export const Sidebar: React.FC = () => {
     { to: '/admin/audit', label: 'System Audit Log', icon: History }
   ];
 
+  const officerLinks: NavItem[] = [
+    { to: '/admin', label: 'Officer Dashboard', icon: LayoutDashboard, exact: true },
+    { to: '/admin/applications', label: 'Regional Applications', icon: FileText },
+    { to: '/admin/verification', label: 'Verification Queue', icon: UserCheck, badge: 'AI-OCR' },
+    { to: '/admin/scrutiny', label: 'Scrutiny Workflow', icon: FileSearch }
+  ];
+
   const instituteLinks: NavItem[] = [
     { to: '/admin', label: 'Institute Dashboard', icon: LayoutDashboard, exact: true },
     { to: '/admin/applications', label: 'Student Applications', icon: FileText },
@@ -56,17 +65,19 @@ export const Sidebar: React.FC = () => {
     { to: '/admin/reports', label: 'Reports & Analytics', icon: BarChart3 }
   ];
 
-  const links = isApplicant ? applicantLinks : (role === 'institute' ? instituteLinks : adminLinks);
+  const links = isApplicant 
+    ? applicantLinks 
+    : (role === 'institute' ? instituteLinks : (role === 'officer' ? officerLinks : motaAdminLinks));
 
   return (
     <aside className="w-64 bg-white border-r border-[#c9b79c] min-h-[calc(100vh-4rem)] p-4 flex flex-col justify-between shrink-0">
       <div>
-        <div className="px-3 py-2 mb-4 bg-[#f1e0c5] rounded-lg border border-[#dfcdb1]">
+        <div className="px-3 py-2 mb-4 bg-[#f1e0c5] rounded-lg border border-[#c9b79c]">
           <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
-            {isApplicant ? 'ST Student Workspace' : (role === 'institute' ? 'Institute Workspace' : 'MoTA Administration Hub')}
+            {isApplicant ? 'ST Student Workspace' : (role === 'institute' ? 'Institute Workspace' : (role === 'officer' ? 'State Nodal Portal' : 'MoTA Administration Hub'))}
           </p>
           <p className="text-xs font-bold text-slate-800 mt-0.5">
-            {isApplicant ? 'Scholarship Portal' : (role === 'institute' ? 'Institute Nodal Portal' : 'Unified Officers Portal')}
+            {isApplicant ? 'Scholarship Portal' : (role === 'institute' ? 'Institute Nodal Portal' : (role === 'officer' ? 'Nodal Officer Workspace' : 'Unified Officers Portal'))}
           </p>
         </div>
 

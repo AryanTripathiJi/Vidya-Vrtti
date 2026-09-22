@@ -137,7 +137,7 @@ export const ApplicantDashboard: React.FC = () => {
       {/* Application Status Step Timeline */}
       {primaryApp && (
         <div className="bg-white rounded-2xl border border-[#c9b79c] p-6 shadow-xs">
-          <div className="flex items-center justify-between mb-6 pb-4 border-b border-[#dfcdb1]">
+          <div className="flex items-center justify-between mb-6 pb-4 border-b border-[#c9b79c]">
             <div>
               <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Latest Application Status</span>
               <h3 className="text-lg font-bold text-slate-900 mt-0.5">
@@ -160,7 +160,7 @@ export const ApplicantDashboard: React.FC = () => {
               const isCompleted = primaryApp.currentStage > s.step;
               const isCurrent = primaryApp.currentStage === s.step;
               return (
-                <div key={s.step} className="flex flex-col items-center text-center p-3 rounded-xl bg-[#f1e0c5] border border-[#dfcdb1]">
+                <div key={s.step} className="flex flex-col items-center text-center p-3 rounded-xl bg-[#f1e0c5] border border-[#c9b79c]">
                   <div
                     className={`w-9 h-9 rounded-full font-extrabold text-xs flex items-center justify-center mb-2 ${
                       isCompleted

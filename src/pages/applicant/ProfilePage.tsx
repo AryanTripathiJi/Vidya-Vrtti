@@ -13,7 +13,12 @@ export const ProfilePage: React.FC = () => {
         </div>
         <div>
           <h1 className="text-xl font-bold text-slate-900">{user?.name}</h1>
-          <p className="text-xs text-slate-500">ST Student Profile | Verified Community Member</p>
+          <p className="text-xs text-slate-500 font-medium mt-1 flex items-center">
+            <span className="bg-slate-100 text-slate-700 px-2 py-0.5 rounded border border-slate-200 font-mono font-bold tracking-wider mr-2">
+              ID: {user?.loginId || 'ST-DEMO123'}
+            </span>
+            <span>ST Student Profile | Verified Community Member</span>
+          </p>
         </div>
       </div>
 
@@ -38,7 +43,7 @@ export const ProfilePage: React.FC = () => {
           </div>
         </div>
 
-        <div className="pt-4 border-t border-[#dfcdb1] space-y-3 text-xs">
+        <div className="pt-4 border-t border-[#c9b79c] space-y-3 text-xs">
           <div className="flex items-center space-x-3 text-slate-700">
             <Mail className="w-4 h-4 text-slate-400" />
             <span>{user?.email}</span>

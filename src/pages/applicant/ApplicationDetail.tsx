@@ -108,7 +108,7 @@ export const ApplicationDetailPage: React.FC = () => {
 
       {/* Main Details Card */}
       <div className="bg-white rounded-2xl border border-[#c9b79c] p-6 shadow-xs space-y-6">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#dfcdb1] pb-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#c9b79c] pb-4">
           <div>
             <span className="text-xs font-mono font-bold text-[#71816d]">App ID: {app.id}</span>
             <h1 className="text-xl font-bold text-slate-900 mt-0.5">{app.schemeName}</h1>
@@ -156,7 +156,7 @@ export const ApplicationDetailPage: React.FC = () => {
 
         {/* Candidate & Academic Summary Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="p-4 rounded-xl bg-[#f1e0c5] border border-[#dfcdb1] space-y-2 text-xs">
+          <div className="p-4 rounded-xl bg-[#f1e0c5] border border-[#c9b79c] space-y-2 text-xs">
             <h4 className="font-bold text-slate-900 uppercase tracking-wider text-[11px] border-b pb-1">
               Personal & ST Verification
             </h4>
@@ -178,7 +178,7 @@ export const ApplicationDetailPage: React.FC = () => {
             </div>
           </div>
 
-          <div className="p-4 rounded-xl bg-[#f1e0c5] border border-[#dfcdb1] space-y-2 text-xs">
+          <div className="p-4 rounded-xl bg-[#f1e0c5] border border-[#c9b79c] space-y-2 text-xs">
             <h4 className="font-bold text-slate-900 uppercase tracking-wider text-[11px] border-b pb-1">
               Academic & Bank Details
             </h4>
@@ -263,7 +263,7 @@ export const ApplicationDetailPage: React.FC = () => {
               )}
             </div>
 
-            <div className="flex justify-end space-x-3 pt-4 border-t border-[#dfcdb1]">
+            <div className="flex justify-end space-x-3 pt-4 border-t border-[#c9b79c]">
               <button
                 onClick={() => setShowDeficiencyModal(false)}
                 className="px-4 py-2 rounded-xl bg-[#e8d6ba] text-slate-700 text-xs font-bold"

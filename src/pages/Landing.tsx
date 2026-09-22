@@ -34,7 +34,7 @@ export const LandingPage: React.FC = () => {
             </h1>
 
             <p className="mt-4 text-lg text-slate-200 leading-relaxed font-normal">
-              ST-SETU connects ST students with Ministry of Tribal Affairs (MoTA) Fellowships and Scholarships.
+              Vidya-Vrtti connects ST students with Ministry of Tribal Affairs (MoTA) Fellowships and Scholarships.
               Experience automated eligibility verification, AI document OCR intelligence, real-time application tracking, and transparent merit selection.
             </p>
 
@@ -62,15 +62,15 @@ export const LandingPage: React.FC = () => {
       <section className="bg-white border-b border-[#c9b79c] py-6 shadow-xs">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div className="p-3 border-r border-[#dfcdb1] last:border-0">
+            <div className="p-3 border-r border-[#c9b79c] last:border-0">
               <p className="font-serif text-3xl font-extrabold text-[#71816d]">₹14.8 Cr+</p>
               <p className="text-xs font-semibold text-slate-500 mt-1 uppercase tracking-wider">Disbursed to ST Students</p>
             </div>
-            <div className="p-3 border-r border-[#dfcdb1] last:border-0">
+            <div className="p-3 border-r border-[#c9b79c] last:border-0">
               <p className="font-serif text-3xl font-extrabold text-orange-500">100% Digital</p>
               <p className="text-xs font-semibold text-slate-500 mt-1 uppercase tracking-wider">End-to-End Workflow</p>
             </div>
-            <div className="p-3 border-r border-[#dfcdb1] last:border-0">
+            <div className="p-3 border-r border-[#c9b79c] last:border-0">
               <p className="font-serif text-3xl font-extrabold text-teal-600">&lt; 48 Hours</p>
               <p className="text-xs font-semibold text-slate-500 mt-1 uppercase tracking-wider">Average OCR Scrutiny</p>
             </div>
@@ -78,6 +78,43 @@ export const LandingPage: React.FC = () => {
               <p className="font-serif text-3xl font-extrabold text-purple-700">750+ Slots</p>
               <p className="text-xs font-semibold text-slate-500 mt-1 uppercase tracking-wider">National NFST Fellowships</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Financial Statistics Banner */}
+      <section className="bg-[#f1e0c5] py-10 pb-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center tracking-wide">
+            
+            {/* Postmatric 2026-27 */}
+            <div className="bg-rose-50/90 rounded-2xl py-6 px-4 shadow-sm border border-rose-200/60 transform hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+              <p className="mb-2 uppercase text-[11px] font-extrabold text-rose-700 tracking-widest">Amount Released (Postmatric)</p>
+              <p className="mb-1 text-sm text-slate-500 font-semibold">FY: 2026-27</p>
+              <p className="font-serif text-3xl font-bold text-rose-950">₹359.69 Cr</p>
+            </div>
+
+            {/* Postmatric 2025-26 */}
+            <div className="bg-teal-50/90 rounded-2xl py-6 px-4 shadow-sm border border-teal-200/60 transform hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+              <p className="mb-2 uppercase text-[11px] font-extrabold text-teal-700 tracking-widest">Amount Released (Postmatric)</p>
+              <p className="mb-1 text-sm text-slate-500 font-semibold">FY: 2025-26</p>
+              <p className="font-serif text-3xl font-bold text-teal-950">₹3,854.38 Cr</p>
+            </div>
+
+            {/* Prematric 2026-27 */}
+            <div className="bg-orange-50/90 rounded-2xl py-6 px-4 shadow-sm border border-orange-200/60 transform hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+              <p className="mb-2 uppercase text-[11px] font-extrabold text-orange-700 tracking-widest">Amount Released (Prematric)</p>
+              <p className="mb-1 text-sm text-slate-500 font-semibold">FY: 2026-27</p>
+              <p className="font-serif text-3xl font-bold text-orange-950">₹0 Cr</p>
+            </div>
+
+            {/* Prematric 2025-26 */}
+            <div className="bg-emerald-50/90 rounded-2xl py-6 px-4 shadow-sm border border-emerald-200/60 transform hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+              <p className="mb-2 uppercase text-[11px] font-extrabold text-emerald-700 tracking-widest">Amount Released (Prematric)</p>
+              <p className="mb-1 text-sm text-slate-500 font-semibold">FY: 2025-26</p>
+              <p className="font-serif text-3xl font-bold text-emerald-950">₹155.19 Cr</p>
+            </div>
+
           </div>
         </div>
       </section>
@@ -120,7 +157,7 @@ export const LandingPage: React.FC = () => {
                   {scheme.description}
                 </p>
 
-                <div className="mt-5 p-3 rounded-xl bg-[#f1e0c5] border border-[#dfcdb1] space-y-1.5 text-xs">
+                <div className="mt-5 p-3 rounded-xl bg-[#f1e0c5] border border-[#c9b79c] space-y-1.5 text-xs">
                   <div className="flex justify-between">
                     <span className="text-slate-500 font-medium">Financial Assistance:</span>
                     <span className="font-bold text-slate-900 text-right">{scheme.amount}</span>
@@ -132,7 +169,7 @@ export const LandingPage: React.FC = () => {
                 </div>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-[#dfcdb1] flex items-center justify-between">
+              <div className="mt-6 pt-4 border-t border-[#c9b79c] flex items-center justify-between">
                 <span className="text-[11px] font-medium text-emerald-700 bg-emerald-50 px-2 py-1 rounded-md">
                   Window Open
                 </span>

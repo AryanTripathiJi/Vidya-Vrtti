@@ -169,7 +169,7 @@ export const BrowseSchemes: React.FC = () => {
           </div>
 
           {eligibilityResult && (
-            <div className="mt-4 p-3 bg-white/80 rounded-xl border border-[#dfcdb1] text-xs text-[#5a6857]">
+            <div className="mt-4 p-3 bg-white/80 rounded-xl border border-[#c9b79c] text-xs text-[#5a6857]">
               <span className="font-bold">Result: </span> 
               {eligibilityResult.eligible.length > 0 ? (
                 <span>
@@ -207,7 +207,7 @@ export const BrowseSchemes: React.FC = () => {
               <p className="text-xs text-slate-600 mt-2.5 leading-relaxed">{scheme.description}</p>
 
               <div className="mt-4 space-y-2">
-                <div className="p-3 rounded-xl bg-[#f1e0c5] border border-[#dfcdb1] text-xs space-y-1">
+                <div className="p-3 rounded-xl bg-[#f1e0c5] border border-[#c9b79c] text-xs space-y-1">
                   <div className="flex justify-between flex-wrap gap-x-2 gap-y-1 items-start">
                     <span className="text-slate-500 font-medium shrink-0">Financial Aid:</span>
                     <span className="font-bold text-slate-900 text-right">{scheme.amount}</span>
@@ -232,7 +232,7 @@ export const BrowseSchemes: React.FC = () => {
               </div>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-[#dfcdb1] flex items-center justify-between">
+            <div className="mt-6 pt-4 border-t border-[#c9b79c] flex items-center justify-between">
               <Link
                 to={`/app/schemes/${scheme.id}`}
                 className="text-xs font-bold text-[#71816d] hover:underline"

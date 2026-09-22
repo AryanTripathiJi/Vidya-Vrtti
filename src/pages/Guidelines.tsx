@@ -16,7 +16,7 @@ export const GuidelinesPage: React.FC = () => {
           
           {/* NFST Section */}
           <section>
-            <h2 className="text-2xl font-serif font-bold text-orange-700 flex items-center mb-4 border-b border-[#dfcdb1] pb-2">
+            <h2 className="text-2xl font-serif font-bold text-orange-700 flex items-center mb-4 border-b border-[#c9b79c] pb-2">
               <span className="text-3xl mr-2">📘</span> National Fellowship for Scheduled Tribes (NFST)
             </h2>
             <p className="text-sm leading-relaxed mb-6">
@@ -57,7 +57,7 @@ export const GuidelinesPage: React.FC = () => {
 
           {/* NOS Section */}
           <section>
-            <h2 className="text-2xl font-serif font-bold text-teal-700 flex items-center mb-4 border-b border-[#dfcdb1] pb-2">
+            <h2 className="text-2xl font-serif font-bold text-teal-700 flex items-center mb-4 border-b border-[#c9b79c] pb-2">
               <span className="text-3xl mr-2">🌍</span> National Overseas Scholarship (NOS) for ST Candidates
             </h2>
             <p className="text-sm leading-relaxed mb-6">

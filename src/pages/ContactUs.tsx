@@ -109,12 +109,12 @@ export const ContactUs: React.FC = () => {
 
             return (
               <section key={idx} className="bg-[#fdfbf7] p-8 rounded-md shadow-sm border border-[#c9b79c]">
-                <h2 className="text-2xl font-serif font-bold text-[#5a6857] mb-6 border-b border-[#dfcdb1] pb-2">
+                <h2 className="text-2xl font-serif font-bold text-[#5a6857] mb-6 border-b border-[#c9b79c] pb-2">
                   {group.category}
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {filteredContacts.map((contact) => (
-                    <div key={contact.id} className="bg-white p-5 rounded-md border border-[#dfcdb1] shadow-inner hover:shadow-md transition-shadow">
+                    <div key={contact.id} className="bg-white p-5 rounded-md border border-[#c9b79c] shadow-inner hover:shadow-md transition-shadow">
                       <h3 className="text-lg font-bold text-[#2c352a]">{contact.name}</h3>
                       <p className="text-sm font-semibold text-[#71816d] mb-3">{contact.designation}</p>
                       

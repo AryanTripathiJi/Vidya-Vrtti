@@ -26,7 +26,7 @@ export const Introduction: React.FC = () => {
       <div className="bg-white rounded-2xl border border-[#c9b79c] shadow-xs overflow-hidden">
         
         {/* 1. Background and Context */}
-        <div className="p-8 border-b border-[#dfcdb1]">
+        <div className="p-8 border-b border-[#c9b79c]">
           <h2 className="text-2xl font-bold text-slate-900 mb-4 font-serif flex items-center">
             <Building2 className="w-6 h-6 mr-3 text-amber-600" />
             1. Background and Context
@@ -36,7 +36,7 @@ export const Introduction: React.FC = () => {
               The Ministry of Tribal Affairs (MoTA), Government of India, is the nodal ministry responsible for the holistic development of Scheduled Tribe (ST) communities across the country. Among its many responsibilities, the Ministry implements several flagship scholarship and fellowship schemes aimed at promoting higher education among ST students. These schemes are designed to provide financial assistance to meritorious ST students who wish to pursue advanced studies, research programmes, and professional courses within India and abroad.
             </p>
             <p>Two of the most prominent schemes administered by MoTA are:</p>
-            <ul className="list-disc list-inside ml-4 space-y-2 text-slate-800 bg-[#f1e0c5] p-4 rounded-xl border border-[#dfcdb1]">
+            <ul className="list-disc list-inside ml-4 space-y-2 text-slate-800 bg-[#f1e0c5] p-4 rounded-xl border border-[#c9b79c]">
               <li><strong>The National Fellowship for Scheduled Tribes (NFST)</strong> – which supports ST students pursuing M.Phil. and Ph.D. programmes in recognized Indian universities and institutions.</li>
               <li><strong>The National Overseas Scholarship (NOS)</strong> – which enables ST students to pursue Master's, Ph.D., and Post-Doctoral research programmes at top-ranked universities abroad.</li>
             </ul>
@@ -50,7 +50,7 @@ export const Introduction: React.FC = () => {
         </div>
 
         {/* 2. The Problem */}
-        <div className="p-8 border-b border-[#dfcdb1] bg-slate-50">
+        <div className="p-8 border-b border-[#c9b79c] bg-slate-50">
           <h2 className="text-2xl font-bold text-slate-900 mb-4 font-serif flex items-center">
             <ShieldCheck className="w-6 h-6 mr-3 text-rose-600" />
             2. The Problem
@@ -76,20 +76,20 @@ export const Introduction: React.FC = () => {
           </div>
         </div>
 
-        {/* 3. The ST-SETU Solution */}
-        <div className="p-8 border-b border-[#dfcdb1]">
+        {/* 3. The Vidya-Vrtti Solution */}
+        <div className="p-8 border-b border-[#c9b79c]">
           <h2 className="text-2xl font-bold text-slate-900 mb-4 font-serif flex items-center">
             <Sparkles className="w-6 h-6 mr-3 text-[#71816d]" />
-            3. The ST-SETU Solution
+            3. The Vidya-Vrtti Solution
           </h2>
           <div className="space-y-4 text-sm text-slate-700 leading-relaxed font-medium">
             <p>
-              ST-SETU (Scholarship & Fellowship Tribal Education Unified Platform) is a proposed AI-enabled digital platform that addresses these challenges by bringing the complete end-to-end administration of MoTA scholarship and fellowship schemes onto one integrated, secure, transparent, and intelligent system.
+              Vidya-Vrtti (Scholarship & Fellowship Tribal Education Unified Platform) is a proposed AI-enabled digital platform that addresses these challenges by bringing the complete end-to-end administration of MoTA scholarship and fellowship schemes onto one integrated, secure, transparent, and intelligent system.
             </p>
-            <p className="bg-[#f1e0c5] p-4 rounded-xl border border-[#dfcdb1] font-bold text-slate-800 text-center text-lg italic font-serif">
+            <p className="bg-[#f1e0c5] p-4 rounded-xl border border-[#c9b79c] font-bold text-slate-800 text-center text-lg italic font-serif">
               The name "SETU" (meaning "bridge" in Sanskrit and several Indian languages) reflects the platform's core purpose: to serve as a bridge between deserving ST students and the financial assistance they need.
             </p>
-            <p>ST-SETU is designed with the following foundational principles:</p>
+            <p>Vidya-Vrtti is designed with the following foundational principles:</p>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
               <li className="bg-slate-50 p-3 rounded-lg border border-slate-200"><strong className="text-slate-900">Unified Platform:</strong> A single platform that handles all MoTA scholarship schemes, eliminating the need for multiple disjointed systems.</li>
               <li className="bg-slate-50 p-3 rounded-lg border border-slate-200"><strong className="text-slate-900">Configurable Architecture:</strong> Built on a configurable rule engine that allows scheme-specific eligibility criteria, document requirements, selection processes, and workflow stages to be defined without code changes.</li>
@@ -101,11 +101,11 @@ export const Introduction: React.FC = () => {
           </div>
         </div>
 
-        {/* 4. How ST-SETU Works */}
-        <div className="p-8 border-b border-[#dfcdb1] bg-slate-50">
+        {/* 4. How Vidya-Vrtti Works */}
+        <div className="p-8 border-b border-[#c9b79c] bg-slate-50">
           <h2 className="text-2xl font-bold text-slate-900 mb-6 font-serif flex items-center">
             <Target className="w-6 h-6 mr-3 text-blue-600" />
-            4. How ST-SETU Works
+            4. How Vidya-Vrtti Works
           </h2>
           
           <div className="space-y-8">
@@ -137,7 +137,7 @@ export const Introduction: React.FC = () => {
 
             <div>
               <h3 className="text-lg font-bold text-purple-700 mb-3">4.3 AI and Intelligence Layer</h3>
-              <p className="text-sm text-slate-700 mb-2 font-medium">At the heart of ST-SETU is an AI layer that assists with:</p>
+              <p className="text-sm text-slate-700 mb-2 font-medium">At the heart of Vidya-Vrtti is an AI layer that assists with:</p>
               <ul className="list-disc list-inside space-y-1.5 text-sm text-slate-700 font-medium ml-4">
                 <li><strong>Document Intelligence:</strong> OCR technology extracts text from uploaded documents.</li>
                 <li><strong>Data Validation:</strong> Cross-checks extracted data against declared information.</li>
@@ -170,7 +170,7 @@ export const Introduction: React.FC = () => {
           </h2>
           <div className="space-y-4 text-sm text-slate-700 leading-relaxed font-medium">
             <p>
-              <strong>Scheme Coverage:</strong> ST-SETU is designed to handle all MoTA scholarship and fellowship schemes, including NFST, NOS, Top Class Education, and Pre/Post-Matric Scholarships.
+              <strong>Scheme Coverage:</strong> Vidya-Vrtti is designed to handle all MoTA scholarship and fellowship schemes, including NFST, NOS, Top Class Education, and Pre/Post-Matric Scholarships.
             </p>
             <p>
               <strong>Benefits to Stakeholders:</strong> 
@@ -179,12 +179,12 @@ export const Introduction: React.FC = () => {
               <br/>- For the Ministry: Improved efficiency, enhanced transparency, data-driven decisions.
             </p>
             <p>
-              <strong>Alignment with Government Initiatives:</strong> ST-SETU is aligned with Digital India, Direct Benefit Transfer (DBT), Smart Education, E-Governance, Atmanirbhar Bharat, and NEP 2020.
+              <strong>Alignment with Government Initiatives:</strong> Vidya-Vrtti is aligned with Digital India, Direct Benefit Transfer (DBT), Smart Education, E-Governance, Atmanirbhar Bharat, and NEP 2020.
             </p>
             <div className="bg-[#71816d] text-white p-6 rounded-xl mt-6 shadow-md">
               <h3 className="text-lg font-bold mb-2 font-serif text-amber-200">Conclusion</h3>
               <p className="text-sm font-medium leading-relaxed">
-                ST-SETU represents a comprehensive, thoughtful, and future-ready solution to the challenges facing MoTA's scholarship and fellowship administration. By bringing together the entire lifecycle onto one integrated platform, leveraging AI and configurable rules, and prioritizing transparency and human oversight, ST-SETU has the potential to significantly improve the efficiency, transparency, and accountability of scholarship administration—ultimately benefiting thousands of Scheduled Tribe students across India.
+                Vidya-Vrtti represents a comprehensive, thoughtful, and future-ready solution to the challenges facing MoTA's scholarship and fellowship administration. By bringing together the entire lifecycle onto one integrated platform, leveraging AI and configurable rules, and prioritizing transparency and human oversight, Vidya-Vrtti has the potential to significantly improve the efficiency, transparency, and accountability of scholarship administration—ultimately benefiting thousands of Scheduled Tribe students across India.
               </p>
               <p className="text-sm font-medium leading-relaxed mt-4 italic text-amber-100">
                 The platform is not just a technological solution; it is a bridge (SETU) between deserving students and the opportunities they deserve, between government intent and effective implementation, and between traditional administration and digital transformation.

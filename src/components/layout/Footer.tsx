@@ -9,7 +9,7 @@ export const Footer: React.FC = () => {
           <div className="space-y-2">
             <div className="flex items-center space-x-2 text-white font-bold text-sm">
               <ShieldCheck className="w-5 h-5 text-amber-400" />
-              <span>ST-SETU Portal</span>
+              <span>Vidya-Vrtti Portal</span>
             </div>
             <p className="text-[11px] text-slate-400 leading-relaxed">
               Single Digital Window for End-to-End Management of MoTA Scholarships & Fellowships for ST Students.

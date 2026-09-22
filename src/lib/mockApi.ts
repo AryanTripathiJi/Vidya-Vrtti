@@ -106,17 +106,18 @@ if (!localStorage.getItem(STORAGE_KEYS.NOTIFICATIONS)) {
 
 export const mockApi = {
   // Auth API
-  async login(email: string, role?: string): Promise<{ user: User; token: string }> {
+  async login(identifier: string, role?: string): Promise<{ user: User; token: string }> {
     await delay(300);
     const users = getStoredData<User[]>(STORAGE_KEYS.USERS, INITIAL_USERS);
-    let user = users.find((u) => u.email.toLowerCase() === email.toLowerCase());
+    let user = users.find((u) => u.email.toLowerCase() === identifier.toLowerCase() || u.loginId?.toLowerCase() === identifier.toLowerCase());
 
     if (!user) {
       // Return a demo user based on role or fallback
       user = {
         id: `usr-demo-${Date.now()}`,
+        loginId: `ST-${Math.floor(100000 + Math.random() * 900000)}`,
         name: role === 'officer' ? 'Shri Rajesh Kumar' : role === 'admin' ? 'Smt. Kavita Rao' : role === 'committee' ? 'Dr. Meera Sharma' : 'Demo Student',
-        email,
+        email: identifier.includes('@') ? identifier : 'demo@vidya-vrtti.gov.in',
         phone: '9876543210',
         role: (role as User['role']) || 'applicant',
         createdAt: new Date().toISOString()
@@ -130,12 +131,18 @@ export const mockApi = {
   async register(data: Partial<User>): Promise<User> {
     await delay(400);
     const users = getStoredData<User[]>(STORAGE_KEYS.USERS, INITIAL_USERS);
+    
+    // Generate a unique 6-digit alphanumeric ID
+    const randomSuffix = Math.random().toString(36).substring(2, 8).toUpperCase();
+    const loginId = `ST-${randomSuffix}`;
+
     const newUser: User = {
       id: `usr-${Date.now()}`,
-      name: data.name || 'New ST Applicant',
-      email: data.email || 'applicant@demo.in',
+      loginId,
+      name: data.name || 'New User',
+      email: data.email || 'user@demo.in',
       phone: data.phone || '9876543210',
-      role: 'applicant',
+      role: data.role || 'applicant',
       tribe: data.tribe || 'Gond',
       aadhaar: data.aadhaar || 'XXXX-XXXX-9921',
       state: data.state || 'Odisha',

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { Role } from '../../types';
@@ -14,15 +14,71 @@ import {
   FileCheck2,
   CheckCircle2,
   AlertCircle,
-  LayoutDashboard
+  LayoutDashboard,
+  Globe
 } from 'lucide-react';
+
+const LANGUAGES = [
+  { code: 'en', name: 'English' },
+  { code: 'hi', name: 'Hindi - हिंदी' },
+  { code: 'bn', name: 'Bengali - বাংলা' },
+  { code: 'mr', name: 'Marathi - मराठी' },
+  { code: 'te', name: 'Telugu - తెలుగు' },
+  { code: 'ta', name: 'Tamil - தமிழ்' },
+  { code: 'gu', name: 'Gujarati - ગુજરાતી' },
+  { code: 'ur', name: 'Urdu - اردو' },
+  { code: 'kn', name: 'Kannada - ಕನ್ನಡ' },
+  { code: 'or', name: 'Odia - ଓଡ଼ିଆ' },
+  { code: 'ml', name: 'Malayalam - മലയാളം' },
+  { code: 'pa', name: 'Punjabi - ਪੰਜਾਬੀ' },
+  { code: 'as', name: 'Assamese - অসমীয়া' },
+  { code: 'mai', name: 'Maithili - मैथिली' },
+  { code: 'sat', name: 'Santali - ᱥᱟᱱᱛᱟᱲᱤ' },
+  { code: 'ks', name: 'Kashmiri - कॉशुर' },
+  { code: 'ne', name: 'Nepali - नेपाली' },
+  { code: 'sd', name: 'Sindhi - सिन्धी' },
+  { code: 'doi', name: 'Dogri - डोगरी' },
+  { code: 'kok', name: 'Konkani - कोंकणी' },
+  { code: 'mni', name: 'Manipuri - ꯃꯤꯇꯩꯂꯣꯟ' },
+  { code: 'brx', name: 'Bodo - बड़ो' },
+  { code: 'sa', name: 'Sanskrit - संस्कृतम्' },
+  { code: 'bho', name: 'Bhojpuri - भोजपुरी' },
+  { code: 'raj', name: 'Rajasthani - राजस्थानी' },
+  { code: 'hne', name: 'Chhattisgarhi - छत्तीसगढ़ी' },
+  { code: 'mag', name: 'Magahi - मगही' },
+  { code: 'bgc', name: 'Haryanvi - हरियाणवी' },
+  { code: 'mwr', name: 'Marwari - मारवाड़ी' },
+  { code: 'mup', name: 'Malvi - मालवी' },
+  { code: 'mtr', name: 'Mewari - मेवाड़ी' },
+  { code: 'kfq', name: 'Khortha - खोरठा' },
+  { code: 'sck', name: 'Sadri - सादरी' },
+  { code: 'gbm', name: 'Garhwali - गढ़वाली' },
+  { code: 'kfy', name: 'Kumaoni - कुमाऊँनी' },
+  { code: 'tcy', name: 'Tulu - ತುಳು' },
+  { code: 'lus', name: 'Mizo - Mizo ṭawng' }
+];
 
 export const Navbar: React.FC = () => {
   const { user, role, switchRole, logout, notifications, unreadCount, markNotificationAsRead } = useAuth();
   const [showNotifications, setShowNotifications] = useState(false);
   const [showProfileMenu, setShowProfileMenu] = useState(false);
   const [showRoleDropdown, setShowRoleDropdown] = useState(false);
+  const [language, setLanguage] = useState('en');
   const navigate = useNavigate();
+
+  // Sync custom dropdown with Google Translate widget
+  useEffect(() => {
+    const triggerTranslation = () => {
+      const selectField = document.querySelector('.goog-te-combo') as HTMLSelectElement;
+      if (selectField) {
+        selectField.value = language;
+        selectField.dispatchEvent(new Event('change'));
+      }
+    };
+    
+    // Slight delay to ensure widget is loaded when first changing
+    setTimeout(triggerTranslation, 300);
+  }, [language]);
 
   const handleRoleSwitch = (newRole: Role) => {
     switchRole(newRole);
@@ -62,6 +118,8 @@ export const Navbar: React.FC = () => {
     }
   };
 
+
+
   return (
     <header className="bg-[#71816d] text-white sticky top-0 z-50 shadow-md border-b border-navy-700">
       {/* Top Govt Bar */}
@@ -75,6 +133,28 @@ export const Navbar: React.FC = () => {
           <span className="hidden md:inline text-amber-300 font-semibold">Direct Benefit Transfer (DBT) Portal</span>
         </div>
         <div className="flex items-center space-x-4">
+          {/* Language Selector */}
+          <div className="flex items-center space-x-1.5 bg-[#4e5a4b] px-2 py-0.5 rounded border border-[#71816d]">
+            <Globe className="w-3.5 h-3.5 text-slate-300" />
+            <select 
+              value={language}
+              onChange={(e) => setLanguage(e.target.value)}
+              className="bg-transparent text-slate-200 text-[11px] font-medium focus:outline-none cursor-pointer appearance-none pr-3"
+              style={{
+                backgroundImage: `url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23cbd5e1%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E")`,
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'right .1rem top 50%',
+                backgroundSize: '.5rem auto',
+              }}
+            >
+              {LANGUAGES.map(lang => (
+                <option key={lang.code} value={lang.code} className="bg-white text-slate-800">
+                  {lang.name}
+                </option>
+              ))}
+            </select>
+          </div>
+          <span>|</span>
           <Link to="/help" className="hover:text-amber-300 transition-colors">
             Help & Guidelines
           </Link>
@@ -94,7 +174,7 @@ export const Navbar: React.FC = () => {
             <div>
               <div className="flex items-center space-x-2">
                 <span className="font-serif font-extrabold text-xl tracking-tight text-white group-hover:text-amber-300 transition-colors">
-                  ST-SETU
+                  Vidya-Vrtti
                 </span>
                 <span className="bg-orange-500 text-navy-950 text-[10px] font-black px-1.5 py-0.5 rounded-xs uppercase tracking-wider">
                   AI-Unified
@@ -128,7 +208,7 @@ export const Navbar: React.FC = () => {
 
             {showNotifications && (
               <div className="absolute right-0 mt-2 w-80 sm:w-96 bg-white rounded-xl shadow-2xl border border-[#c9b79c] py-2 text-slate-800 z-50">
-                <div className="px-4 py-2 border-b border-[#dfcdb1] flex items-center justify-between">
+                <div className="px-4 py-2 border-b border-[#c9b79c] flex items-center justify-between">
                   <span className="font-bold text-sm text-slate-900">Notifications ({notifications.length})</span>
                   <span className="text-xs text-orange-600 font-semibold cursor-pointer hover:underline">
                     Mark all read
@@ -195,7 +275,7 @@ export const Navbar: React.FC = () => {
 
               {showProfileMenu && (
                 <div className="absolute right-0 mt-2 w-56 bg-white rounded-xl shadow-xl border border-[#c9b79c] py-2 text-slate-800 z-50">
-                  <div className="px-4 py-2 border-b border-[#dfcdb1]">
+                  <div className="px-4 py-2 border-b border-[#c9b79c]">
                     <p className="text-xs font-bold text-slate-900 truncate">{user.name}</p>
                     <p className="text-[11px] text-slate-500 truncate">{user.email}</p>
                   </div>
@@ -251,13 +331,13 @@ export const Navbar: React.FC = () => {
               </button>
               <div className="absolute left-0 top-full mt-0 w-80 bg-white text-slate-800 rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
                 <ul className="py-1 border border-[#c9b79c] rounded">
-                  <li><Link to="/introduction" className="block px-4 py-2 hover:bg-[#f1e0c5] hover:text-amber-600 transition-colors border-b border-[#dfcdb1]">Introduction</Link></li>
-                  <li><Link to="/guidelines" className="block px-4 py-2 hover:bg-[#f1e0c5] hover:text-amber-600 transition-colors border-b border-[#dfcdb1]">Guidelines & Amendments</Link></li>
-                  <li><Link to="#" className="block px-4 py-2 hover:bg-[#f1e0c5] hover:text-amber-600 transition-colors border-b border-[#dfcdb1]">Circulars / Orders / Notifications</Link></li>
-                  <li><a href="/docs/Post_Matric.pdf" target="_blank" rel="noopener noreferrer" className="block px-4 py-2 hover:bg-[#f1e0c5] hover:text-amber-600 transition-colors border-b border-[#dfcdb1]">Post-Matric Scholarship Scheme For ST Students</a></li>
-                  <li><a href="/docs/Pre_Matric.pdf" target="_blank" rel="noopener noreferrer" className="block px-4 py-2 hover:bg-[#f1e0c5] hover:text-amber-600 transition-colors border-b border-[#dfcdb1]">Pre-Matric Scholarship Scheme For ST Student</a></li>
-                  <li><a href="/docs/Fellowship_and_Top_Class.pdf" target="_blank" rel="noopener noreferrer" className="block px-4 py-2 hover:bg-[#f1e0c5] hover:text-amber-600 transition-colors border-b border-[#dfcdb1]">Top Class Education For ST Students</a></li>
-                  <li><a href="/docs/Fellowship_and_Top_Class.pdf" target="_blank" rel="noopener noreferrer" className="block px-4 py-2 hover:bg-[#f1e0c5] hover:text-amber-600 transition-colors border-b border-[#dfcdb1]">National Fellowship for ST Students</a></li>
+                  <li><Link to="/introduction" className="block px-4 py-2 hover:bg-[#f1e0c5] hover:text-amber-600 transition-colors border-b border-[#c9b79c]">Introduction</Link></li>
+                  <li><Link to="/guidelines" className="block px-4 py-2 hover:bg-[#f1e0c5] hover:text-amber-600 transition-colors border-b border-[#c9b79c]">Guidelines & Amendments</Link></li>
+                  <li><Link to="#" className="block px-4 py-2 hover:bg-[#f1e0c5] hover:text-amber-600 transition-colors border-b border-[#c9b79c]">Circulars / Orders / Notifications</Link></li>
+                  <li><a href="/docs/Post_Matric.pdf" target="_blank" rel="noopener noreferrer" className="block px-4 py-2 hover:bg-[#f1e0c5] hover:text-amber-600 transition-colors border-b border-[#c9b79c]">Post-Matric Scholarship Scheme For ST Students</a></li>
+                  <li><a href="/docs/Pre_Matric.pdf" target="_blank" rel="noopener noreferrer" className="block px-4 py-2 hover:bg-[#f1e0c5] hover:text-amber-600 transition-colors border-b border-[#c9b79c]">Pre-Matric Scholarship Scheme For ST Student</a></li>
+                  <li><a href="/docs/Fellowship_and_Top_Class.pdf" target="_blank" rel="noopener noreferrer" className="block px-4 py-2 hover:bg-[#f1e0c5] hover:text-amber-600 transition-colors border-b border-[#c9b79c]">Top Class Education For ST Students</a></li>
+                  <li><a href="/docs/Fellowship_and_Top_Class.pdf" target="_blank" rel="noopener noreferrer" className="block px-4 py-2 hover:bg-[#f1e0c5] hover:text-amber-600 transition-colors border-b border-[#c9b79c]">National Fellowship for ST Students</a></li>
                   <li><a href="/docs/National_Overseas.pdf" target="_blank" rel="noopener noreferrer" className="block px-4 py-2 hover:bg-[#f1e0c5] hover:text-amber-600 transition-colors">National Overseas Scholarship Scheme</a></li>
                 </ul>
               </div>
@@ -274,6 +354,18 @@ export const Navbar: React.FC = () => {
                   <li><Link to="/register?tab=student" className="block px-4 py-2 hover:bg-[#f1e0c5] hover:text-amber-600 transition-colors">Students Fresh</Link></li>
                   <li><Link to="/register?tab=institute" className="block px-4 py-2 hover:bg-[#f1e0c5] hover:text-amber-600 transition-colors">University/ Institute</Link></li>
                   <li><Link to="/register?tab=student&type=renewal" className="block px-4 py-2 hover:bg-[#f1e0c5] hover:text-amber-600 transition-colors">Renewal Students( M.Phil to Ph.D)</Link></li>
+                </ul>
+              </div>
+            </li>
+
+            <li className="relative group">
+              <button className="hover:text-amber-300 flex items-center transition-colors pb-2 -mb-2">
+                View Yearly Report <ChevronDown className="w-3 h-3 ml-0.5" />
+              </button>
+              <div className="absolute right-0 top-full mt-0 w-48 bg-white text-slate-800 rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+                <ul className="py-1 border border-[#c9b79c] rounded">
+                  <li><Link to="/reports/pre-matric" className="block px-4 py-2 hover:bg-[#f1e0c5] hover:text-amber-600 transition-colors border-b border-[#c9b79c]">Pre-Matric Report</Link></li>
+                  <li><Link to="/reports/post-matric" className="block px-4 py-2 hover:bg-[#f1e0c5] hover:text-amber-600 transition-colors">Post-Matric Report</Link></li>
                 </ul>
               </div>
             </li>

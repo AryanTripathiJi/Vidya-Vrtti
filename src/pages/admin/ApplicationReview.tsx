@@ -221,7 +221,7 @@ export const ApplicationReviewPage: React.FC = () => {
         <div className="lg:col-span-7 space-y-4">
           <div className="bg-white rounded-2xl border border-[#c9b79c] p-5 shadow-xs space-y-4">
             {/* Document Tabs */}
-            <div className="flex items-center space-x-2 border-b border-[#dfcdb1] pb-3 overflow-x-auto">
+            <div className="flex items-center space-x-2 border-b border-[#c9b79c] pb-3 overflow-x-auto">
               {app.documents.map((doc) => (
                 <button
                   key={doc.id}

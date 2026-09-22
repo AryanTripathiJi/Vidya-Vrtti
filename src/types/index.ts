@@ -13,6 +13,7 @@ export type ApplicationStatus =
 
 export interface User {
   id: string;
+  loginId?: string;
   name: string;
   email: string;
   phone: string;
@@ -128,6 +129,7 @@ export interface Deficiency {
 export interface Application {
   id: string;
   applicantId: string;
+  applicantLoginId?: string;
   applicantName: string;
   schemeId: string;
   schemeCode: string;
@@ -191,6 +193,33 @@ export interface AdminStats {
   funnelData: Array<{ stage: string; count: number; percentage: number }>;
   deficiencyBreakdown: Array<{ reason: string; count: number }>;
   anomalies: Array<{ id: string; applicantName: string; schemeCode: string; reason: string; severity: 'High' | 'Medium' | 'Low' }>;
+  disbursements: {
+    total: string;
+    monthlyTrend: Array<{ month: string; amount: number }>;
+    schemeSplit: Array<{ scheme: string; amount: string }>;
+    pending: number;
+  };
+  topPerformers: {
+    states: Array<{ name: string; count: number }>;
+    institutes: Array<{ name: string; count: number }>;
+    officers: Array<{ name: string; count: number }>;
+    bottomOfficers: Array<{ name: string; reason: string }>;
+  };
+  activityFeed: Array<{
+    id: string;
+    message: string;
+    timestamp: string;
+    type: 'approval' | 'deficiency' | 'submission' | 'merit' | 'disbursement';
+  }>;
+  schemePerformance: Array<{
+    scheme: string;
+    applications: number;
+    pending: number;
+    verified: number;
+    selected: number;
+    disbursedAmount: string;
+    avgProcessingTimeDays: number;
+  }>;
 }
 
 export interface MeritCandidate {

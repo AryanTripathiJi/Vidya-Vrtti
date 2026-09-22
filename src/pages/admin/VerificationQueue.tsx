@@ -39,7 +39,7 @@ export const VerificationQueuePage: React.FC = () => {
             <thead className="bg-[#f1e0c5] border-b border-[#c9b79c] text-slate-500 font-bold uppercase tracking-wider">
               <tr>
                 <th className="px-6 py-3.5">App ID</th>
-                <th className="px-6 py-3.5">Candidate Name</th>
+                <th className="px-6 py-3.5">Candidate Name & ID</th>
                 <th className="px-6 py-3.5">Scheme</th>
                 <th className="px-6 py-3.5">Tribe & State</th>
                 <th className="px-6 py-3.5">AI Risk Score</th>
@@ -51,7 +51,12 @@ export const VerificationQueuePage: React.FC = () => {
               {queue.map((app) => (
                 <tr key={app.id} className="hover:bg-[#f1e0c5]/80 transition-colors">
                   <td className="px-6 py-4 font-mono font-bold text-[#71816d]">{app.id}</td>
-                  <td className="px-6 py-4 font-bold text-slate-900">{app.applicantName}</td>
+                  <td className="px-6 py-4">
+                    <div className="font-bold text-slate-900">{app.applicantName}</div>
+                    <div className="text-[10px] text-slate-500 font-mono mt-0.5 border border-slate-200 bg-slate-50 inline-block px-1 rounded-sm">
+                      {app.applicantLoginId || `ST-${app.applicantId.slice(-4).toUpperCase()}`}
+                    </div>
+                  </td>
                   <td className="px-6 py-4 font-bold text-slate-700">{app.schemeCode}</td>
                   <td className="px-6 py-4 text-slate-600">
                     {app.address?.state || 'Odisha'} ({app.personal?.tribeName || 'Gond'})

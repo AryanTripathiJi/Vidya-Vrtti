@@ -45,15 +45,15 @@ export const SchemeDetailPage: React.FC = () => {
         <p className="text-xs text-slate-600 mt-2 leading-relaxed">{scheme.description}</p>
 
         <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div className="p-4 rounded-xl bg-[#f1e0c5] border border-[#dfcdb1]">
+          <div className="p-4 rounded-xl bg-[#f1e0c5] border border-[#c9b79c]">
             <p className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Financial Assistance</p>
             <p className="text-sm font-extrabold text-slate-900 mt-1">{scheme.amount}</p>
           </div>
-          <div className="p-4 rounded-xl bg-[#f1e0c5] border border-[#dfcdb1]">
+          <div className="p-4 rounded-xl bg-[#f1e0c5] border border-[#c9b79c]">
             <p className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Annual National Slots</p>
             <p className="text-sm font-extrabold text-slate-900 mt-1">{scheme.totalSlots} Slots</p>
           </div>
-          <div className="p-4 rounded-xl bg-[#f1e0c5] border border-[#dfcdb1]">
+          <div className="p-4 rounded-xl bg-[#f1e0c5] border border-[#c9b79c]">
             <p className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Selection Mode</p>
             <p className="text-sm font-extrabold text-slate-900 mt-1 capitalize">{scheme.selectionCriteria} Based</p>
           </div>
@@ -79,7 +79,7 @@ export const SchemeDetailPage: React.FC = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
           {scheme.requiredDocs.map((doc, idx) => (
-            <div key={idx} className="flex items-start space-x-2.5 p-3 rounded-xl bg-[#f1e0c5] border border-[#dfcdb1]">
+            <div key={idx} className="flex items-start space-x-2.5 p-3 rounded-xl bg-[#f1e0c5] border border-[#c9b79c]">
               <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
               <span className="text-xs font-semibold text-slate-800">{doc}</span>
             </div>

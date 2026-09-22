@@ -127,7 +127,7 @@ export const SchemeConfigEnginePage: React.FC = () => {
           </div>
 
           {/* Dynamic Eligibility Rules Builder */}
-          <div className="space-y-3 pt-4 border-t border-[#dfcdb1]">
+          <div className="space-y-3 pt-4 border-t border-[#c9b79c]">
             <div className="flex items-center justify-between">
               <h3 className="font-bold text-slate-900 text-sm">Dynamic Eligibility Rules Engine</h3>
               <button

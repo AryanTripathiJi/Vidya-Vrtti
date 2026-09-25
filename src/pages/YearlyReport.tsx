@@ -137,7 +137,7 @@ export const YearlyReport: React.FC = () => {
                     <RechartsTooltip 
                       cursor={{ fill: '#f1e0c5', opacity: 0.4 }}
                       contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
-                      formatter={(value: number) => [`₹${value.toLocaleString()} Lakhs`, 'Amount']}
+                      formatter={(value: any) => [`₹${Number(value).toLocaleString()} Lakhs`, 'Amount']}
                     />
                     <Bar dataKey="amount" fill="#71816d" radius={[4, 4, 0, 0]} />
                   </BarChart>
@@ -169,7 +169,7 @@ export const YearlyReport: React.FC = () => {
                     </Pie>
                     <RechartsTooltip 
                       contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
-                      formatter={(value: number) => [`₹${value.toLocaleString()} Lakhs`, 'Amount']}
+                      formatter={(value: any) => [`₹${Number(value).toLocaleString()} Lakhs`, 'Amount']}
                     />
                     <Legend 
                       layout="vertical" 

@@ -16,5 +16,16 @@ export default defineConfig({
     port: 5173,
     host: true,
     allowedHosts: true,
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom'],
+          charts: ['recharts'],
+          pdf: ['jspdf', 'html2canvas']
+        }
+      }
+    }
   }
 })

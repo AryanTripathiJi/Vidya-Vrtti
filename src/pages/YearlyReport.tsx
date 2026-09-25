@@ -23,7 +23,7 @@ export const YearlyReport: React.FC = () => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await fetch('/yearlyReportData.csv');
+        const response = await fetch(import.meta.env.BASE_URL + 'yearlyReportData.csv');
         const text = await response.text();
         
         const lines = text.split('\n').filter(line => line.trim() !== '');
@@ -110,7 +110,7 @@ export const YearlyReport: React.FC = () => {
           </div>
           
           <a 
-            href="/yearlyReportData.csv" 
+            href={import.meta.env.BASE_URL + 'yearlyReportData.csv'} 
             download={`${type}-yearly-report.csv`}
             className="flex items-center space-x-2 px-5 py-2.5 bg-[#71816d] hover:bg-[#5a6857] text-white text-sm font-semibold rounded-xl transition-colors shadow-sm cursor-pointer"
           >
